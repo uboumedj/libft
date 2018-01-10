@@ -6,7 +6,7 @@
 #    By: uboumedj <uboumedj@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/10 14:14:53 by uboumedj          #+#    #+#              #
-#    Updated: 2018/01/10 17:23:45 by uboumedj         ###   ########.fr        #
+#    Updated: 2018/01/10 18:56:05 by uboumedj         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,8 @@ SRC = mem/ft_memset.c mem/ft_memcpy.c mem/ft_memccpy.c mem/ft_memmove.c \
 		  list/ft_lstnew.c list/ft_lstdelone.c list/ft_lstdel.c list/ft_lstadd.c \
 		  list/ft_lstiter.c list/ft_lstmap.c \
 		  math/ft_abs.c math/ft_sqrt.c math/ft_max.c math/ft_min.c math/ft_pow.c \
-		  math/ft_toneg.c math/ft_nbrlen.c math/ft_unbrlenbase.c
+		  math/ft_toneg.c math/ft_nbrlen.c math/ft_unbrlenbase.c \
+		  GNL/get_next_line.c
 
 #ALLOWED EXTENSIONS
 

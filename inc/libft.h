@@ -6,7 +6,7 @@
 /*   By: uboumedj <uboumedj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 11:39:48 by uboumedj          #+#    #+#             */
-/*   Updated: 2018/01/10 15:10:21 by uboumedj         ###   ########.fr       */
+/*   Updated: 2018/01/10 18:54:32 by uboumedj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <string.h>
 # include <stdlib.h>
 # include <wchar.h>
+
+# define BUFF_SIZE 10
 
 typedef struct	s_list
 {
@@ -132,11 +134,18 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 /*
 ** -------------------------------Mathematics----------------------------------
 */
+
 int				ft_abs(int n);
 int				ft_sqrt(int nb);
 int				ft_pow(int x, int y);
 int				ft_toneg(int *nb);
 int				ft_max(int a, int b);
 int				ft_min(int a, int b);
+
+/*
+** ----------------------------File Manipulation-------------------------------
+*/
+
+int				get_next_line(const int fd, char **line);
 
 #endif
