@@ -6,7 +6,7 @@
 /*   By: uboumedj <uboumedj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 11:39:48 by uboumedj          #+#    #+#             */
-/*   Updated: 2018/01/10 18:54:32 by uboumedj         ###   ########.fr       */
+/*   Updated: 2018/05/18 17:17:45 by uboumedj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 # include <string.h>
 # include <stdlib.h>
 # include <wchar.h>
+# include "ft_printf.h"
 
-# define BUFF_SIZE 10
+# define BUFF_SIZE 1
 
 typedef struct	s_list
 {
@@ -26,6 +27,12 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct	s_stack
+{
+	int				content;
+	struct s_stack	*next;
+}				t_stack;
 
 /*
 ** ---------------------------Display Functions---------------------------
@@ -52,6 +59,7 @@ void			ft_putlenwstr(wchar_t *str, int len);
 */
 
 int				ft_atoi(const char *str);
+long long int	ft_atoll(const char *str);
 int				ft_strtonum(char **str, int *res);
 char			*ft_itoa(int n);
 char			*ft_strrev(char *str);
@@ -88,6 +96,8 @@ size_t			ft_unbrlenbase(unsigned long long int nb, unsigned int base);
 int				ft_strnlen(const char *str, int n);
 int				ft_wstrlen(const wchar_t *str);
 int				ft_wstrnlen(const wchar_t *str, int n);
+int				ft_strarraylen(char **array);
+char			**ft_strarrdup(char **str);
 
 /*
 ** ---------------------------CHAR Manipulation-----------------------------
@@ -119,6 +129,7 @@ int				ft_memcmp(const void *ptr1, const void *ptr2, size_t n);
 void			*ft_memccpy(void *dest, const void *src, int c, size_t len);
 void			*ft_memchr(const void *ptr, int value, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
+void			ft_strarrayfree(char **strs);
 
 /*
 ** -----------------------------Lists Manipulation----------------------------
@@ -141,6 +152,13 @@ int				ft_pow(int x, int y);
 int				ft_toneg(int *nb);
 int				ft_max(int a, int b);
 int				ft_min(int a, int b);
+
+/*
+** --------------------------------Stacks-------------------------------------
+*/
+
+t_stack			*ft_stacknew(int content);
+void			ft_stackfree(t_stack **stack);
 
 /*
 ** ----------------------------File Manipulation-------------------------------
