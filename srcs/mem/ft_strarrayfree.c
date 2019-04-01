@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strarrayfree.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uboumedj <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: uboumedj <uboumedj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 11:42:09 by uboumedj          #+#    #+#             */
-/*   Updated: 2018/02/28 17:21:13 by uboumedj         ###   ########.fr       */
+/*   Created: 2018/01/25 17:09:50 by uboumedj          #+#    #+#             */
+/*   Updated: 2018/03/02 14:56:52 by uboumedj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-void	ft_putstr(char const *str)
+void	ft_strarrayfree(char **strs)
 {
 	int i;
 
 	i = 0;
-	if (str)
+	while (strs[i])
 	{
-		while (str[i])
-			i++;
-		write(1, str, i);
+		free(strs[i]);
+		i++;
 	}
+	free(strs);
 }

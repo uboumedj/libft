@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strarraylen.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uboumedj <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: uboumedj <uboumedj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 11:42:09 by uboumedj          #+#    #+#             */
-/*   Updated: 2018/02/28 17:21:13 by uboumedj         ###   ########.fr       */
+/*   Created: 2018/01/22 16:07:48 by uboumedj          #+#    #+#             */
+/*   Updated: 2018/01/22 16:09:35 by uboumedj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-void	ft_putstr(char const *str)
+int		ft_strarraylen(char **array)
 {
-	int i;
+	int res;
 
-	i = 0;
-	if (str)
-	{
-		while (str[i])
-			i++;
-		write(1, str, i);
-	}
+	res = 0;
+	while (array[res])
+		res++;
+	return (res);
 }

@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uboumedj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 11:42:09 by uboumedj          #+#    #+#             */
-/*   Updated: 2018/02/28 17:21:13 by uboumedj         ###   ########.fr       */
+/*   Created: 2017/11/10 11:29:24 by uboumedj          #+#    #+#             */
+/*   Updated: 2018/03/01 14:34:40 by uboumedj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-void	ft_putstr(char const *str)
+long long int	ft_atoll(const char *str)
 {
-	int i;
+	int				neg;
+	long long int	res;
+	int				i;
 
+	neg = 1;
+	res = 0;
 	i = 0;
-	if (str)
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-')
+		neg = -1;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (ft_isdigit(str[i]))
 	{
-		while (str[i])
-			i++;
-		write(1, str, i);
+		res = (res * 10) + ((str[i] - '0') % 10);
+		i++;
 	}
+	return (res * neg);
 }

@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_stacknew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uboumedj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 11:42:09 by uboumedj          #+#    #+#             */
-/*   Updated: 2018/02/28 17:21:13 by uboumedj         ###   ########.fr       */
+/*   Created: 2018/01/16 14:08:12 by uboumedj          #+#    #+#             */
+/*   Updated: 2018/01/23 13:32:41 by uboumedj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-void	ft_putstr(char const *str)
+t_stack	*ft_stacknew(int content)
 {
-	int i;
+	t_stack *new;
 
-	i = 0;
-	if (str)
-	{
-		while (str[i])
-			i++;
-		write(1, str, i);
-	}
+	if (!(new = (t_stack *)malloc(sizeof(t_stack))))
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

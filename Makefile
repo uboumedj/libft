@@ -6,7 +6,7 @@
 #    By: uboumedj <uboumedj@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/10 14:14:53 by uboumedj          #+#    #+#              #
-#    Updated: 2018/01/10 18:56:05 by uboumedj         ###   ########.fr        #
+#    Updated: 2018/03/02 14:51:46 by uboumedj         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 CCFLAGS = -Wall -Wextra -Werror
 
-HEADER = libft.h
+HEADER = libft.h ft_printf.h
 
 SRCDIR = srcs
 OBJDIR = obj
@@ -24,7 +24,7 @@ INCDIR = inc
 
 SRC = mem/ft_memset.c mem/ft_memcpy.c mem/ft_memccpy.c mem/ft_memmove.c \
 		  mem/ft_memchr.c mem/ft_memcmp.c mem/ft_memalloc.c mem/ft_memdel.c \
-		  mem/ft_bzero.c \
+		  mem/ft_bzero.c mem/ft_strarrayfree.c\
 		  str/ft_strlen.c str/ft_strsplit.c str/ft_strctrim.c str/ft_strtrim.c \
 		  str/ft_strjoin_i.c str/ft_strdup.c str/ft_strcpy.c str/ft_strncpy.c \
 		  str/ft_strcat.c str/ft_strncat.c str/ft_strlcat.c str/ft_strchr.c \
@@ -33,7 +33,8 @@ SRC = mem/ft_memset.c mem/ft_memcpy.c mem/ft_memccpy.c mem/ft_memmove.c \
 		  str/ft_striter.c str/ft_striteri.c str/ft_strsub.c str/ft_strmap.c \
 		  str/ft_strmapi.c str/ft_strequ.c str/ft_strnequ.c str/ft_strjoin.c \
 		  str/ft_strrev.c str/ft_atoi.c str/ft_itoa.c str/ft_strtonum.c str/ft_wstrlen.c \
-		  str/ft_wstrnlen.c str/ft_strnlen.c \
+		  str/ft_wstrnlen.c str/ft_strnlen.c str/ft_strarraylen.c str/ft_atoll.c \
+		  str/ft_strarrdup.c \
 		  char/ft_isalpha.c char/ft_isdigit.c char/ft_isalnum.c char/ft_isascii.c \
 		  char/ft_isprint.c char/ft_isupper.c char/ft_islower.c char/ft_isspace.c \
 		  char/ft_isblank.c char/ft_toupper.c char/ft_tolower.c char/ft_wcharlen.c \
@@ -47,7 +48,12 @@ SRC = mem/ft_memset.c mem/ft_memcpy.c mem/ft_memccpy.c mem/ft_memmove.c \
 		  list/ft_lstiter.c list/ft_lstmap.c \
 		  math/ft_abs.c math/ft_sqrt.c math/ft_max.c math/ft_min.c math/ft_pow.c \
 		  math/ft_toneg.c math/ft_nbrlen.c math/ft_unbrlenbase.c \
-		  GNL/get_next_line.c
+		  GNL/get_next_line.c \
+		  printf/ft_printf.c printf/ft_printf_bint.c printf/ft_printf_char.c \
+		  printf/ft_printf_hexint.c printf/ft_printf_int.c printf/ft_printf_oint.c \
+		  printf/ft_printf_ptr.c printf/ft_printf_str.c printf/ft_printf_uint.c \
+		  printf/ft_printflags.c printf/ft_setflags.c \
+		  stacks/ft_stacknew.c stacks/ft_stackfree.c
 
 #ALLOWED EXTENSIONS
 
